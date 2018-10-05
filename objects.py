@@ -17,7 +17,7 @@ class Base:
 
 class Plant(Base):
 
-    def __init__(self, stdscr, space_tree, x=0, y=0, symbol='v', color=1, species=0):
+    def __init__(self, stdscr, space_tree, x=0, y=0, symbol='v', color=2, species=0):
         Base.__init__(self, x, y, symbol, color)
         self.species = species
         self.stdscr = stdscr
@@ -28,12 +28,9 @@ class Plant(Base):
         if random.random() < 0.1:
             pos = (max(0, self.y + random.choice([-1, 0, 1])), max(0, self.x + random.choice([-1, 1])))
             
-            if not self.space_tree[pos] == 1:
+            if not self.space_tree[pos] > 1:
                 objects += [Fruit(stdscr=self.stdscr, y=pos[0], x=pos[1])]
                 self.space_tree[pos] = 1
-
-        #     objects += [Fruit(stdscr=self.stdscr, y=self.y +
-        #                       random.choice([-1, 0, 1]), x=self.x + random.choice([-1, 1]))]
 
 
 class Fruit(Base):
@@ -42,3 +39,31 @@ class Fruit(Base):
         Base.__init__(self, x, y, symbol, color)
         self.kind = kind
         self.stdscr = stdscr
+
+
+class Monkey(Base):
+
+    def __init__(self, stdscr, space_tree, x=0, y=0, symbol='@', color=4):
+        Base.__init__(self, x, y, symbol, color)
+        self.stdscr = stdscr
+        self.space_tree = space_tree
+
+    def update(self, objects):
+        actions = ['up', 'down', 'left', 'right', 'none']
+        action = random.choice(actions)
+
+        current_position = (self.y, self.x)
+        if action=='up':
+            self.y = max(0, self.y - 1)
+        if action=='down':
+            self.y = (self.y + 1) % height
+        if action=='left':
+            self.x = max(0, self.x - 1)
+        if action=='right':
+            self.x = (self.x + 1) % width
+
+        if not self.space_tree(2+self.y, self.x) == 2:
+            self.y, self.x = current_position
+
+        Base.update(self)
+
