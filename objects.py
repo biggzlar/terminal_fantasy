@@ -53,17 +53,18 @@ class Monkey(Base):
         action = random.choice(actions)
 
         current_position = (self.y, self.x)
+
         if action=='up':
             self.y = max(0, self.y - 1)
         if action=='down':
-            self.y = (self.y + 1) % height
+            self.y = (self.y + 1) % 20 # height
         if action=='left':
             self.x = max(0, self.x - 1)
         if action=='right':
-            self.x = (self.x + 1) % width
+            self.x = (self.x + 1) % 20 # width
 
-        if not self.space_tree(2+self.y, self.x) == 2:
+        if self.space_tree[2+self.y, self.x] == 2:
             self.y, self.x = current_position
 
-        Base.update(self)
+        Base.update(self, objects)
 
