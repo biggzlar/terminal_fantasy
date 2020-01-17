@@ -9,4 +9,4 @@ gameplay-narrative lead by core elements to convey aspects of posthumanism. thes
 * play as a human (only)
 * considering mixtures...
 
-elements can be thought of as the readiness to distance oneself from the original human existence. staying entirely human, improving the human body, leaving the human body but keepig the self to even the renunciation of the own self.
+elements can be thought of as the readiness to distance oneself from the original human existence. staying entirely human, improving the human body, leaving the human body but keeping the self to even the renunciation of the own self.
