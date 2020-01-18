@@ -10,7 +10,8 @@ cd arcade
 pip install -e .
 ```
 
-## core
+## design considerations
+### core
 gameplay-narrative lead by core elements to convey aspects of posthumanism. these aspects are not thought as thorough interpretations but as ideas that are up to the interpretation of the player.
 * fuse with the ooze (phyrexian living metal)
 * continuous existence as software - leave brain behind
