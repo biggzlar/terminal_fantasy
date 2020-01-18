@@ -1,6 +1,15 @@
 # terminal_fantasy
 Turn-based Reinforcement Learning environment, built with python curses.
 
+## setup
+### install dependencies
+__custom arcade__
+```bash
+git clone https://github.com/biggzlar/arcade
+cd arcade
+pip install -e .
+```
+
 ## core
 gameplay-narrative lead by core elements to convey aspects of posthumanism. these aspects are not thought as thorough interpretations but as ideas that are up to the interpretation of the player.
 * fuse with the ooze (phyrexian living metal)
